@@ -1,11 +1,11 @@
-// Initialize butotn with users's prefered color
+// Inicializa o botão com a cor preferida do usuário
 let changeColor = document.getElementById("changeColor");
 
 chrome.storage.sync.get("color", ({ color }) => {
   changeColor.style.backgroundColor = color;
 });
 
-// When the button is clicked, inject setPageBackgroundColor into current page
+// Quando o botão é clicado, injeta setPageBackgroundColor na página atual
 changeColor.addEventListener("click", async () => {
   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
@@ -15,8 +15,8 @@ changeColor.addEventListener("click", async () => {
   });
 });
 
-// The body of this function will be execuetd as a content script inside the
-// current page
+// O corpo desta função será executado como um script de conteúdo dentro do
+// pagina atual
 function setPageBackgroundColor() {
   chrome.storage.sync.get("color", ({ color }) => {
     document.querySelector(".header-menu").style.backgroundColor = color;
