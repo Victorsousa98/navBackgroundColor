@@ -1,0 +1,26 @@
+{
+  "name": "background do Nav boticario",
+  "description": "Uma extensão que mudar a cor de fundo do site do OBoticario",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/boticario16.png",
+      "32": "/images/boticario32.png",
+      "48": "/images/boticario48.png",
+      "128": "/images/boticario128.png"
+    }
+  },
+  "icons": {
+    "16": "/images/boticario16.png",
+    "32": "/images/boticario32.png",
+    "48": "/images/boticario48.png",
+    "128": "/images/boticario128.png"
+  },
+  "options_page": "options.html"
+}
